@@ -19,8 +19,8 @@ $(document).ready(function(){
         '<div class="tweet">',
           '<p>',
             '<a href="#" data-user=' + '"' + tweet.user + '"'+ 'class="user-name">' + '@' + tweet.user + '</a>',
-          ' : ' + tweet.message,
-          '<p class="tweet-time">Tweeted: ' + moment(createdAt).fromNow()  + '</p>',
+            ' : ' + tweet.message,
+            '<p class="tweet-time">Tweeted: ' + moment(createdAt).fromNow()  + '</p>',
           '</p>',
         '</div>'
       ].join(" ");
@@ -28,7 +28,7 @@ $(document).ready(function(){
       $html.appendTo($tweetContainer);
       index--;
     }
-    setTimeout(function() { user.getTweets(); }, 1500);
+    setTimeout(function() { user.getTweets(); }, 10000);
   };
 
   // Set the streams.users array by username.
@@ -53,17 +53,34 @@ $(document).ready(function(){
     user.setHomeView();
   });
 
+  // Prevent empty tweets.
+  $('#tweetModal').on('shown.bs.modal', function() {
+    var $textarea = $('.form-text');
+    var $tweetFormSubmit = $('.tweet-form-submit');
+    
+    $textarea.on('keydown', function() {
+      if ($textarea.val().length > 1) {
+        $tweetFormSubmit.prop('disabled', false);
+      } else {
+        $tweetFormSubmit.prop('disabled', true);
+      }
+    });
+  });
+
+  //  Handle form submit calls
+  $('#tweetForm').on('submit', function(e) {
+    var data = $('.form-text').val();
+    console.log(e);
+
+    $('.form-text').empty();
+    $('#tweetModal').modal('hide');
+    e.preventDefault();
+  });
+
+
+
+
   // Initialize!
   user.getTweets();
-
-
-
-
-// $('#myModal').on('show.bs.modal', function(e) {
-//   var target = e.relatedTarget;
-//   var username = target.dataset.user;
-
-//   $('#modalLabel').html(username);
-// });
 
 });
