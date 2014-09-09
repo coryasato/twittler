@@ -1,0 +1,22 @@
+{
+  "name": "2014-10-twittler",
+  "version": "0.0.0",
+  "homepage": "https://github.com/coryasato/2014-10-twittler",
+  "authors": [
+    "Cory Asato <czasato@gmail.com>"
+  ],
+  "description": "Twitter Clone",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "js/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "moment": "~2.8.3"
+  }
+}

@@ -1,0 +1,58 @@
+body {
+  background-color: #E0FFFF;
+}
+
+h1,h2,h3,p {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.navbar-header {
+  float: left;
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+}
+
+.navbar-default .navbar-brand {
+  color: #ADD8E6;
+}
+.navbar-default:hover .navbar-brand:hover {
+  color: #ADD8E6;
+}
+
+.navbar-brand { float: none; }
+
+.tweet-btn {
+  float: right;
+}
+
+.main-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 0px;
+}
+.title-block {
+  border-bottom: 1px solid #EBEBEB;
+  padding: 15px;
+}
+
+.tweet-title {
+  margin: 0 auto;
+  padding-top: 5px;
+  color: grey;
+  font-weight: 300;
+  float: left;
+}
+
+.tweet {
+  border-bottom: 1px solid #EBEBEB;
+  padding: 15px;
+}
+
+.user-name {
+  font-size: 18px;
+}
+
+.tweet-time {
+  font-size: 10px;  
+}

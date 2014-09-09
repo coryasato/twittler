@@ -1,27 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="jquery.js"></script>
-    <script src="data_generator.js"></script>
+    <link rel="stylesheet" href="js/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <script>
+    <section class="content">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand fa fa-twitter fa-2x twitter-icon" href="#">  Twittler</a>
+          </div>
+          <div class="nav navbar-nav">
+          </div>
+        </div>
+      </nav>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+      <section class="container">
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2 main-container">
+            <div class='clearfix title-block'>
+              <h3 class="tweet-title">Tweets</h3>
+              <button class='btn btn-primary tweet-btn'>Tweet!</button>
+            </div>
+            <div class="tweet-container"></div>
+          </div>
+        </div>
+      </section>
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="modalLabel"></h4>
+            </div>
+            <div class="modal-body" id="modalBody">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      });
 
-    </script>
+  <!-- Javascript Files -->
+    <script src="js/lib/jquery/dist/jquery.min.js"></script>
+    <script src="js/data_generator.js"></script>
+    <script src="js/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/lib/moment/min/moment.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
