@@ -45,10 +45,7 @@ $(document).ready(function(){
 
   // Creates a new object to push to.
   var createVisitor = function(name) {
-    var username = {};
-    username.name = name;
     window.streams.users[name] = [];
-    window.streams.users[name].push(username);
   };
   
   var initialize = function() {
@@ -96,7 +93,7 @@ $(document).ready(function(){
   });
 
   // Clear the inputs on modal hide event.
-  $('#tweetModal').on('hidden.bs.modal', function(e) {
+  $('#tweetModal').on('hidden.bs.modal', function() {
       $('.form-text').val('');
       $('.guest-name').val('');
   });
