@@ -37,10 +37,17 @@ $(document).ready(function(){
     this.getTweets();
   };
 
-  //  Set the main array stream.
+  // Set the main array stream.
   user.setHomeView = function() {
     this.username = window.streams.home;
     this.getTweets();
+  };
+  // Creates a new object to push to.
+  var createVisitor = function(name) {
+    var username = {};
+    username.name = name;
+    window.streams.users[name] = [];
+    window.streams.users[name].push(username);
   };
 
   // Get the value from the data attr and pass it to our user object.
@@ -73,12 +80,19 @@ $(document).ready(function(){
     var $data = $('.form-text').val();
     var $guestName = $('.guest-name').val();
 
+    // Set global visitor by input or default.  writeTweet() expects this to be handled.
     window.visitor = $guestName || "visitor";
-    console.log(window.visitor + " " + $data);
-    window.writeTweet($data);
-    
+    createVisitor(window.visitor);
+    // Using the given utility function to pass our tweet.
+    writeTweet($data);
+    user.getTweets();
+
     $('#tweetModal').modal('hide');
   });
+
+  $('#tweetModal').on('hidden.bs.modal', function(e) {
+      $('.form-text').empty();
+    });
 
 
 
