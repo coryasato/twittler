@@ -83,10 +83,10 @@ $(document).ready(function(){
     // Set global visitor by input or default.  writeTweet() expects this to be handled.
     window.visitor = $guestName || "visitor";
     createVisitor(window.visitor);
+
     // Using the given utility function to pass our tweet.
     writeTweet($data);
     user.getTweets();
-
     $('#tweetModal').modal('hide');
   });
 
