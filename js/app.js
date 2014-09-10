@@ -92,7 +92,7 @@ $(document).ready(function(){
 
   $('#tweetModal').on('hidden.bs.modal', function(e) {
       $('.form-text').empty();
-    });
+  });
 
 
 
