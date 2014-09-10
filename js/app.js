@@ -44,8 +44,11 @@ $(document).ready(function(){
   };
 
   // Creates a new object to push to.
-  var createVisitor = function(name) {
+  var createVisitor = function(name, message) {
+    var username = {};
+    username.user = name;
     window.streams.users[name] = [];
+    window.streams.users[name].push(username);
   };
   
   var initialize = function() {
@@ -79,15 +82,18 @@ $(document).ready(function(){
   //  Handle form submit calls
   $('#tweetForm').on('submit', function(e) {
     e.preventDefault();
-    var $data = $('.form-text').val();
+    var $message = $('.form-text').val();
     var $guestName = $('.guest-name').val();
 
     // Set global visitor by input or default.  writeTweet() expects this to be handled.
     window.visitor = $guestName || "visitor";
-    createVisitor(window.visitor);
+
+    if(window.streams.users[window.visitor] === undefined) {
+      createVisitor(window.visitor);
+    }
 
     // Using the given utility function to pass our tweet.
-    writeTweet($data);
+    writeTweet($message);
     user.getTweets();
     $('#tweetModal').modal('hide');
   });
