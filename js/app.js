@@ -42,12 +42,17 @@ $(document).ready(function(){
     this.username = window.streams.home;
     this.getTweets();
   };
+
   // Creates a new object to push to.
   var createVisitor = function(name) {
     var username = {};
     username.name = name;
     window.streams.users[name] = [];
     window.streams.users[name].push(username);
+  };
+  
+  var initialize = function() {
+    return user.getTweets();
   };
 
   // Get the value from the data attr and pass it to our user object.
@@ -90,13 +95,13 @@ $(document).ready(function(){
     $('#tweetModal').modal('hide');
   });
 
+  // Clear the inputs on modal hide event.
   $('#tweetModal').on('hidden.bs.modal', function(e) {
-      $('.form-text').empty();
+      $('.form-text').val('');
+      $('.guest-name').val('');
   });
 
-
-
   // Initialize!
-  user.getTweets();
+  initialize();
 
 });
