@@ -69,14 +69,16 @@ $(document).ready(function(){
 
   //  Handle form submit calls
   $('#tweetForm').on('submit', function(e) {
-    var data = $('.form-text').val();
-    console.log(e);
-
-    $('.form-text').empty();
-    $('#tweetModal').modal('hide');
     e.preventDefault();
-  });
+    var $data = $('.form-text').val();
+    var $guestName = $('.guest-name').val();
 
+    window.visitor = $guestName || "visitor";
+    console.log(window.visitor + " " + $data);
+    window.writeTweet($data);
+    
+    $('#tweetModal').modal('hide');
+  });
 
 
 
