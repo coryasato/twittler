@@ -51,7 +51,7 @@ $(document).ready(function(){
     window.streams.users[name].push(username);
   };
   
-  var initialize = function() {
+  var init = function() {
     return user.getTweets();
   };
 
@@ -107,6 +107,6 @@ $(document).ready(function(){
   });
 
   // Initialize!
-  initialize();
+  init();
 
 });
