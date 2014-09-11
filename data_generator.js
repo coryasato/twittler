@@ -52,7 +52,7 @@ for(var i = 0; i < 10; i++){
 
 var scheduleNextTweet = function(){
   generateRandomTweet();
-  setTimeout(scheduleNextTweet, 10000);//Math.random() * 1500);  //Calmed down the madness!
+  setTimeout(scheduleNextTweet, 10000);//Math.random() * 1500);  // Calmed down the madness!
 };
 scheduleNextTweet();
 
