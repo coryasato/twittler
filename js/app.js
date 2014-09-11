@@ -28,7 +28,7 @@ $(document).ready(function(){
       $html.appendTo($tweetContainer);
       index--;
     }
-    setTimeout(function() { user.getTweets(); }, 10000);
+    setTimeout(function() { user.getTweets(); }, 1500);
   };
 
   // Set the streams.users array by username.
