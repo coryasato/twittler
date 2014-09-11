@@ -61,14 +61,16 @@ $(document).ready(function(){
     user.setUserView(username);
   });
   // Home view on logo click.
-  $('.twitter-icon').on('click', function() {
+  $('.twitter-icon, .icon-home').on('click', function() {
     user.setHomeView();
   });
 
   // Prevent empty tweets.
-  $('#tweetModal').on('shown.bs.modal', function() {
+  $('#tweetModal').on('show.bs.modal', function() {
     var $textarea = $('.form-text');
     var $tweetFormSubmit = $('.tweet-form-submit');
+
+    $tweetFormSubmit.prop('disabled', true);
     
     $textarea.on('keydown', function() {
       if ($textarea.val().length > 1) {

@@ -1,9 +1,14 @@
 body {
-  background-color: #E0FFFF;
+  background-color: #C0DEED;
 }
 
 h1,h2,h3,p {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.content {
+  background: url('../assets/twitter-bg.png') no-repeat;
+  background-attachment: fixed;
 }
 
 .navbar-header {
@@ -17,13 +22,25 @@ h1,h2,h3,p {
   color: #ADD8E6;
 }
 .navbar-default:hover .navbar-brand:hover {
-  color: #ADD8E6;
+  color: #87CEFF;
 }
 
 .navbar-brand { float: none; }
 
-.tweet-btn {
-  float: right;
+.navbar>.container-fluid .navbar-brand {
+  margin-left: -85px;
+}
+
+.icon-home {
+  background: transparent;
+  color: #C0DEED;
+  border: none;
+  padding: 4px;
+  float: left;
+}
+
+.icon-home:hover {
+  color: #87CEFF;
 }
 
 .main-container {
@@ -31,9 +48,25 @@ h1,h2,h3,p {
   border-radius: 8px;
   padding: 0px;
 }
+
+.icon-tweet {
+  background: url('../assets/twitter-tweet-icon.png') no-repeat;
+  background-position: center center;
+  background-size: contain;
+  border: none;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  float: right;
+}
+
+.btn:focus {
+  outline: none;
+}
+
 .title-block {
   border-bottom: 1px solid #EBEBEB;
-  padding: 15px;
+  padding: 12px;
 }
 
 .tweet-title {
@@ -56,3 +89,15 @@ h1,h2,h3,p {
 .tweet-time {
   font-size: 10px;  
 }
+
+/* Modal */
+.modal-body {
+  background-color: #C0DEED;
+}
+
+.guest-name, .form-text, .form-control {
+  border-color: #87CEFF;
+}
+
+
+
